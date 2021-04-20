@@ -1,0 +1,285 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Blue Tarp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+      @import url("https://use.typekit.net/zbe5ofc.css");
+
+      .header {
+        height: 25%;
+        background-image: linear-gradient(to bottom, rgba(64, 109, 181, 0.25), rgba(255, 255, 255, 1) 95%), url("https://eoimages.gsfc.nasa.gov/images/imagerecords/92000/92789/puertorico_gliht_2018117_lrg.jpg");
+        background-size: cover;
+      }
+
+      /* Set default font for body */
+      body {
+        font-family: source-sans-pro !important;
+        background-color: rgba(255, 255, 255);
+        padding-top: 50px;
+      }
+
+      /* Make h1 bold */
+      h1 {
+        font-weight: bold;
+        font-size: 4.5rem;
+      }
+
+      h2 {
+        font-weight: bold;
+        font-size: 2rem;
+        padding-top: 0;
+      }
+
+      h3 {
+        font-style: italic;
+        font-size: 1.8rem;
+        margin-top: 0;
+      }
+
+      .badge-pill {
+        background-color: #eeee81;
+        padding: 5px 12px;
+        font-size: 2rem;
+        color: black;
+      }
+
+      .intro-box-body {
+        padding-top: 10px;
+        padding-left: 5px;
+        padding-right: 0px;
+        padding-bottom: 10px;
+        font-size: 120%;
+        max-width: 90%;
+      }
+
+      .num-callout {
+        display: block;
+      }
+
+      .num-callout h1 {
+        font-size: 6rem;
+        text-align: center;
+        margin-bottom: 0;
+      }
+
+      .num-callout p {
+        font-size: 120%;
+        text-align: center;
+      }
+
+      .tableau-viz {
+        max-width: 90%;
+      }
+
+      #viz1 {
+        width: 1233px;
+        height: 735px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Make logo fit width of nav bar */
+      #logo {
+        height: 55px
+      }
+
+      .main-content {
+        padding-left: 10%;
+      }
+
+      .block-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      #dmg-img {
+        width: 60%;
+      }
+
+      #svi-img {
+        width: 80%;
+      }
+
+      #peak-wind-img {
+        width: 80%;
+      }
+
+      #flood-img {
+        width: 90%;
+      }
+
+      #ols-img {
+        width: 70%;
+      }
+
+      #neighbors-img {
+        width: 80%;
+      }
+
+      #lm-img {
+        width: 60%;
+      }
+      #results-img {
+        width: 50%;
+      }
+
+      #donut-img {
+        width: 50%;
+      }
+
+      .navbar {
+        min-height: 80px;
+      }
+
+      .navbar-brand {
+        height: 80px;
+        line-height: 70px;
+        padding-right: 45px;
+        padding-left: 35px;
+      }
+
+      .navbar-toggle {
+        margin-top: 23px;
+        padding: 9px 10px !important;
+      }
+
+      ul.nav li.dropdown:hover ul.dropdown-menu {
+        display: block;
+      }
+
+      .intro-box-body img {
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .anchor {
+        display: block;
+        height: 115px;
+        margin-top: -115px;
+        visibility: hidden;
+      }
+
+      .table {
+        width: 90%;
+      }
+
+      /* On small screens, set height to 'auto' for the grid */
+      @media screen and (min-width: 768px) {
+        .navbar-nav > li > a {
+          padding-top: 26.5px;
+          padding-bottom: 26.5px;
+          line-height: 27px;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img id="logo" src="bluetarp-logo1.png" alt="Project Blue Tarp Logo"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home<span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+              <a href="data.html" role="button" aria-haspopup="true" aria-expanded="false">Data<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="data.html#fema-lg">FEMA's Individual Assistance Database</a></li>
+                <li><a href="data.html#census">U.S. Census Tract Demographics</a></li>
+                <li><a href="data.html#hud">HUD Fair Market Rates</a></li>
+                <li><a href="data.html#nhc">NHC Hurricane Track Data</a></li>
+                <li><a href="data.html#ara">ARA Hurricane Wind Speed Data</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="approach.html" role="button" aria-haspopup="true" aria-expanded="false">Approach<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="approach.html#model-pipeline">Modeling Pipeline</a></li>
+                <li><a href="approach.html#model-select">Model Selection</a></li>
+                <li><a href="approach.html#model-perform">Model Performance</a></li>
+                <li><a href="approach.html#feature-importance">Feature Importance</a></li>
+              </ul>
+            </li>
+            <li class="dropdown active">
+              <a href="findings.html" role="button" aria-haspopup="true" aria-expanded="false">Results<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="findings.html#model-results">Model Results</a></li>
+                <li><a href="findings.html#county-dash">County Dashboard</a></li>
+              </ul>
+            </li>
+            <li><a href="post-analysis.html">Post-Analysis</a></li>
+            <li><a href="conclusion.html">Conclusion</a></li>
+            <li><a href="contact.html">Team</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="header">
+    </div>
+    <div class="container-fluid main-content">
+      <div class="title">
+          <h1>Results</h1>
+          <br>
+      </div>
+      <div class="intro-box">
+        <div class="intro-box-heading">
+          <span class="anchor" id="model-results"></span>
+          <span class="badge badge-pill">Model Results</span>
+        </div>
+        <div class="intro-box-body">
+          <p>The Random Forest Regressors predicted the relevant components of the Housing Assistance program and the results indicate that Puerto Rico did not receive an entirely equitable allocation of Housing Assistance aid, compared with Florida and Texas.</p>
+          <img class="block-img" id="donut-img" src="results-donuts.png" alt="Visualization of percent gap between actual and predicted housing assistance">
+          <br>
+          <p>The Repair/Replacement Assistance predictions were very similar to the actual amount of aid 	allocated, differing by just -0.2%.  This is a reassuring finding, as housing repairs and replacement homes amounted to $529M and accounts for 83% of all Housing Assistance aid allocated by FEMA in response to Hurricane Maria.  This findings reinforces one of the guiding principles which underpins the Housing Assistance Program - that aid is allocated consistently.  That is, based on the damages sustained, a consistent amount of aid has been allocated for households that were inspected.</p>
+          <p>For Rental Assistance, the model however predicted that $155M should have been paid out in aid, 46% more than the $106M actually allocated.  Put another way, the $49M gap indicates that Puerto Rico received 32% less in Rental Assistance aid than would otherwise be expected, based on the monetary amounts awarded to Florida and Texas.</p>
+          <p>Rental Assistance provides impacted households with a financial stop-gap which allows them to transition to more habitable accommodation, if available.  Analysis of FEMA’s IHP Valid Registrations dataset revealed that approximately 20% of program applicants were unable to claim Rental Assistance aid, due to a lack of alternative housing in Puerto Rico.  A likely explanation for this is that the entire island was decimated by Hurricane Maria and unlike most mainland U.S. states, Puerto Rico does not have any neighbouring states within which residents can seek refuge.  Therefore, Puerto Rico presents somewhat of a unique case to FEMA in terms of their disaster preparedness and recovery process.</p>
+        </div>
+      </div>
+      <div class="intro-box">
+        <div class="intro-box-heading">
+          <span class="anchor" id="county-dash"></span>
+          <span class="badge badge-pill">County Dashboard</span>
+        </div>
+        <div class="intro-box-body">
+          <p>The county-level dashboard displays key metrics associated with the Housing Assistance Program for Puerto Rico, including the estimated shortfall in aid.  Users can filter results for specific counties by selecting regions on the map, allowing exploration of the differing gaps, as predicted by the machine learning models.</p>
+        </div>
+      </div>
+      <div class="tableau-viz">
+        <br>
+        <iframe id="viz1" src="https://public.tableau.com/views/PuertoRico-HousingAssistance_16182903719720/county-dash?::showVizHome=no&:embed=true" onload="this.height=this.content Window.document.body.scrollHeight;"></iframe>
+        <br>
+        <br>
+      </div>
+      <div class="intro-box">
+        <div class="intro-box-body">
+          <p>Every county in Puerto Rico was estimated to have experienced a shortfall in Housing Assistance aid, relative to Florida and Texas.  On average, Puerto Rico received a shortfall of 7.3% and this was primarily driven by the Rental Assistance gap described previously.  Interestingly, the largest estimated gap (-15.9%) occurred in San Juan Municipio, which encompasses the island’s capital city of San Juan, and is the most populous county in Puerto Rico.  A plausible explanation is that San Juan also has the largest percentage of renters of all counties, accounting for 46% of households.  This likely contributed to a greater influx in Rental Assistance applications, many of which were not allocated aid due to a lack of alternative housing being available.</p>
+          <p>Another county of note is Ponce Municipio, estimated to have experienced a shortfall of 6.7% in Housing Assistance aid.  Ponce sustained the largest amount in FEMA-estimated damages ($47M) and similarly received the most in Housing Assistance aid ($26M).  The amounts awarded for housing repairs and replacements homes was the most of any county.  Ponce also had a relatively low proportion of rental assistance applications which explains why the county experienced a more favorable Housing Assistance shortfall than San Juan.  For reference, Ponce and San Juan were allocated similar amounts in Housing Assistance aid, $26M and $24M respectively, yet San Juan residents were unable to benefit from aid to the same extent.</p>
+          <br>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
